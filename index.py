@@ -562,7 +562,7 @@ def main():
     uploadDataToAttachment(output_file_path)
     send_mail(output_file_path)
 
-main()
+# main()
  
 scheduler = BackgroundScheduler(timezone=pytz.timezone('Asia/Calcutta'))
 
