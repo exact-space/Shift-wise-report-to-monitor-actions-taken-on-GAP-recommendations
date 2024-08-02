@@ -316,7 +316,7 @@ def actionTaken_value_to_30min(df,df2):
             return None
 
         # Apply the function to each row in df
-        df['Action Taken(current value)'] = df.apply(find_value_after_30min, axis=1).round(2)
+        df['Action Taken(current value)'] = df.apply(find_value_after_30min, axis=1)
         print(df,"###############")
     return df
 
