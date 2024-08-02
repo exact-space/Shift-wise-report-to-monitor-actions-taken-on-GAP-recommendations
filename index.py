@@ -439,7 +439,7 @@ def send_mail(output_file_path):
     html=' <!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Pulse </title><style type=\"text/css\">body{margin:0;}body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none!important;font-family:sans-serif;font-style:normal;font-weight:400;}button{width:90%;}@media screen and (max-width:600px){body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none!important;font-family:sans-serif;}table{width:100%;}.footer{height:auto!important;max-width:48%!important;width:48%!important;}.table.responsiveImage{height:auto!important;max-width:30%!important;width:30%!important;}.table.responsiveContent{height:auto!important;max-width:66%!important;width:66%!important;}.top{height:auto!important;max-width:48%!important;width:48%!important;}.catalog{margin-left:0%!important;}}@media screen and (max-width:480px){body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none!important;font-family:sans-serif;}table{width:100%!important;border-style:none!important;}.footer{height:auto!important;max-width:96%!important;width:96%!important;}.table.responsiveImage{height:auto!important;max-width:96%!important;width:96%!important;}.table.responsiveContent{height:auto!important;max-width:96%!important;width:96%!important;}.top{height:auto!important;max-width:100%!important;width:100%!important;}.catalog{margin-left:0%!important;}button{width:90%!important;}}</style></head><body yahoo=\"yahoo\" background=\"#f7f7f7\" style=\"background:#f7f7f7;\"><table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td><table width=\"650\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" background=\"#fff\" style=\"background:#fff\"><tbody><tr><td bgcolor=\"#f7f7f7\"><table class=\"top\" width=\"48%\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding:40px 10px 10px 10px;\"><tbody><tr><td style=\"font-size:12px;color:#929292;text-align:center;font-family:sans-serif;padding-bottom:15px;\"><img src="'
     html+=logopath
     html+='" width="150"/></td></tr></tbody></table></td></tr><tr> <td style="border-bottom: solid 1px #CACACA; padding: 15px 15px 30px 15px"><table width="100%" align="left"  cellpadding="0" cellspacing="0"><tr><td width="250" style="padding-top:15px;"><div style="font-size:20px; padding:5px 0px;"><div id="incInfo"><span style="font-size:30px; padding:5px 0px;">'
-    html+=str("Daily Task Recommendation Report").replace("_"," ")
+    html+=str("Daily report-to-monitor-actions-taken-on-GAP-recommendations").replace("_"," ")
     html+='</span></div><div><small>Created on <b><i>'
     html+=formatted_date
     html+=' </i></b></small></div></td></tr></table></td></tr><tr> <td><table class="table" width="96%" align="center" style="text-align: center; padding-top: 15px;"><tbody><tr><td colspan="3" align="left" style="border-bottom: solid 1px #CACACA; padding-bottom: 8px; font-size: 15px;"><b> '
@@ -451,13 +451,13 @@ def send_mail(output_file_path):
     html+='</td><td align="left"  width="33.3%">'
     html+=str("GAP")
     html+='</td></tr></tbody></table><tr> <td style="padding:30px 0px 10px 0px; border-top:solid 1px #CACACA;"><table width="100%" align="left"  cellpadding="0" cellspacing="0"><tr><td align="center"><div> '
-    mailrepname=str("Daily Task Recommendation Report")
+    mailrepname=str("Daily report-to-monitor-actions-taken-on-GAP-recommendations")
 
     file = output_file_path
     # time.sleep(2)
     
     f1='/src/uploads/tasks/'+output_file_path
-    Report_name="Daily Task Recommendation Report"
+    Report_name="Daily report-to-monitor-actions-taken-on-GAP-recommendations"
     # emails=['dibyendu.g@adityabirla.com']
     emails=["nikhil.s@exactspace.co"]
     regards='ExactSpace Technologies</b></html>'
