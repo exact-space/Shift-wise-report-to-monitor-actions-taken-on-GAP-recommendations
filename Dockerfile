@@ -1,0 +1,8 @@
+FROM dev.exactspace.co/python3.8-base-es2:r1
+COPY *.py /src/
+COPY . /src/
+COPY main /src/
+RUN pip install openpyxl
+RUN chmod +x /src/*
+WORKDIR /src
+ENTRYPOINT ["./main"]
