@@ -316,7 +316,7 @@ def actionTaken_value_to_30min(df,df2):
             return None
 
         # Apply the function to each row in df
-        df['Action Taken(current value)'] = df.apply(find_value_after_30min, axis=1)
+        df['Action Taken(current value)'] = round(df.apply(find_value_after_30min, axis=1),2)
         print(df,"###############")
     return df
 
@@ -395,7 +395,7 @@ def save_excel_file(new_df,new_column_order):
             pass
 
     # Save the updated workbook
-    output_file_path = 'highlighted_recommendations_updated.xlsx'
+    output_file_path = 'Daily report-to-monitor-actions-taken-on-GAP-recommendations.xlsx'
     workbook.save(output_file_path)
     print(f"Updated file saved to {output_file_path}")
     return output_file_path
@@ -431,7 +431,7 @@ def uploadDataToAttachment(output_file_path):
 
 def timestamp_to_date(timestamp):
     return time.strftime('%Y-%m-%d', time.localtime(timestamp))
-# output_file_path = 'highlighted_recommendations_updated.xlsx'
+
 
 def send_mail(output_file_path):
     formatted_date = timestamp_to_date(int(time.time()))
@@ -458,8 +458,11 @@ def send_mail(output_file_path):
     
     f1='/src/uploads/tasks/'+output_file_path
     Report_name="Daily report-to-monitor-actions-taken-on-GAP-recommendations"
-    # emails=['dibyendu.g@adityabirla.com']
-    emails=["nikhil.s@exactspace.co"]
+    emails=['dibyendu.g@adityabirla.com',
+            'sayan.dey@adityabirla.com',
+            'anurag.gaurav@adityabirla.com',
+            'aswini.mishra@adityabirla.com']
+    
     regards='ExactSpace Technologies</b></html>'
     body = {
         "to":emails,
@@ -468,7 +471,7 @@ def send_mail(output_file_path):
         "f1":f1,  
         "f2":"", 
         "f3":"", 
-        "cc":['rahul.k@exactspace.co','ashlin.f@exactspace.co'], 
+        "cc":['rahul.k@exactspace.co','ashlin.f@exactspace.co','nikhil.s@exactspace.co','kashmeen.a@exactspace.co'],
         "bcc":[] 
     }
     # print(body)
@@ -562,7 +565,7 @@ def main():
     uploadDataToAttachment(output_file_path)
     send_mail(output_file_path)
 
-# main()
+main()
  
 scheduler = BackgroundScheduler(timezone=pytz.timezone('Asia/Calcutta'))
 
